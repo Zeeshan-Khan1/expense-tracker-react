@@ -1,0 +1,435 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  margin: 30px auto;
+  width: 380px;
+  max-width: 90%;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  margin: 0;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+}
+
+.balance-container {
+  margin-bottom: 10px;
+}
+
+.balance-container h4 {
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+h1 {
+  letter-spacing: 1px;
+  margin: 10px 0 0 0;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 20px 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+h1:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+h3 {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 12px;
+  margin: 40px 0 15px;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+}
+
+h4 {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #666;
+  letter-spacing: 0.5px;
+}
+
+.inc-exp-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inc-exp-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.inc-exp-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.inc-exp-container > div:first-of-type {
+  border-right: 2px solid #e0e0e0;
+  padding-right: 20px;
+}
+
+.inc-exp-container > div:last-of-type {
+  padding-left: 20px;
+}
+
+.money {
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin: 8px 0;
+  font-weight: 600;
+}
+
+.money.plus {
+  color: #10b981;
+  text-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+.money.minus {
+  color: #ef4444;
+  text-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.list li {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.list li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.list li.plus {
+  border-left: 5px solid #10b981;
+}
+
+.list li.minus {
+  border-left: 5px solid #ef4444;
+}
+
+.delete-btn {
+  cursor: pointer;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border: 0;
+  color: #fff;
+  font-size: 18px;
+  line-height: 18px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-120%, -50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+  font-weight: bold;
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transform: translate(-120%, -50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
+}
+
+.form-control {
+  margin: 20px 0;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-size: 0.95rem;
+}
+
+.amount-hint {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  margin-top: 4px;
+  display: block;
+}
+
+.form-control input {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  display: block;
+  font-size: 16px;
+  padding: 12px 15px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  color: #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-control input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.form-control input::placeholder {
+  color: #999;
+}
+
+.btn {
+  cursor: pointer;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  color: #fff;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 0 30px;
+  padding: 14px;
+  width: 100%;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+/* Empty state styling */
+.list:empty::before {
+  content: 'No transactions yet. Add one above!';
+  display: block;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+
+  .header {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    padding: 15px 20px;
+  }
+
+  .inc-exp-container {
+    padding: 20px 15px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .inc-exp-container > div:first-of-type {
+    border-right: none;
+    border-bottom: 2px solid #e0e0e0;
+    padding-right: 0;
+    padding-bottom: 15px;
+  }
+
+  .inc-exp-container > div:last-of-type {
+    padding-left: 0;
+    padding-top: 15px;
+  }
+
+  .money {
+    font-size: 22px;
+  }
+
+  .list li {
+    padding: 12px;
+  }
+
+  .delete-btn {
+    transform: translate(-110%, -50%);
+    font-size: 16px;
+    padding: 5px 8px;
+  }
+
+  .form-control input {
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+
+  .btn {
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header {
+    font-size: 1.8rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
