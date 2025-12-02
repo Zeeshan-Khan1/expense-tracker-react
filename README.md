@@ -23,7 +23,7 @@ A simple and intuitive expense tracking web application built with React.js. Tra
 
 1. **Clone the repository**
 ```js
-git clone https://github.com/yourusername/expense-tracker-react.git
+git clone https://github.com/Zeeshan-Khan1/expense-tracker-react.git
 cd expense-tracker-react
 ```
 ## Install dependencies
