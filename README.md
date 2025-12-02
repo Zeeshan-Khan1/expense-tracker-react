@@ -10,6 +10,7 @@ A simple and intuitive expense tracking web application built with React.js. Tra
 -  **Income/Expense Summary**: See total income and expenses at a glance
 
 ## Live Demo
+https://expenses-tracker-web-e5921b.netlify.app/
 
 ## Screenshot
 <img width="1797" height="900" alt="image" src="https://github.com/user-attachments/assets/6bcb842c-62ef-4ab7-940a-4057f5c835e5" />
