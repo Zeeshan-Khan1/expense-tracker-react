@@ -18,7 +18,6 @@ A simple and intuitive expense tracking web application built with React.js. Tra
 - **React.js** - Frontend framework
 - **JavaScript (ES6+)** - Programming language
 - **HTML5 & CSS3** - Structure and styling
-- **Local Storage** (optional) - Data persistence
 
 ## Installation & Setup
 
